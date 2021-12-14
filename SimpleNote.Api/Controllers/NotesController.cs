@@ -12,11 +12,11 @@ namespace SimpleNote.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class NoteController : ControllerBase
+    public class NotesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
-        public NoteController(ApplicationDbContext context)
+        public NotesController(ApplicationDbContext context)
         {
             _context = context;
         }

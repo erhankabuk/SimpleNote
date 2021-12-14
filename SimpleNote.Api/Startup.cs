@@ -34,6 +34,7 @@ namespace SimpleNote.Api
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SimpleNote.Api", Version = "v1" });
+                
             });
         }
 
@@ -44,7 +45,12 @@ namespace SimpleNote.Api
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SimpleNote.Api v1"));
+                app.UseSwaggerUI(c => 
+                { 
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "SimpleNote.Api v1");
+                    c.RoutePrefix="";
+                    
+                });
             }
 
             app.UseHttpsRedirection();
